@@ -11,7 +11,7 @@ async function getPokemonData() {
 
 export default async function Home() {
   const data = await getPokemonData();
-  console.log(data);
+  // console.log(data);
 
   return (
     <div>

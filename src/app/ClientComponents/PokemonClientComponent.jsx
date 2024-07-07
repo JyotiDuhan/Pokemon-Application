@@ -36,7 +36,7 @@ export default function PokemonClientComponent(props) {
             <img className="h-40 w-40 rounded-t-lg" src={`https://img.pokemondb.net/artwork/${item.name}.jpg`} />
             <div className="p-4 bg-slate-50 rounded-b-lg">
               <p className="capitalize font-bold">{item.name}</p>
-              <Link to='/' href='/'>{'Details ->'}</Link>
+              <Link to='/search' href={`/search/${item.name}`}>{'Details ->'}</Link>
             </div>
           </div>
         )}
