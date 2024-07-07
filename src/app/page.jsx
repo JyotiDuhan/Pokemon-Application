@@ -1,4 +1,4 @@
-import Image from "next/image";
+import PokemonClientComponent from "./ClientComponents/PokemonClientComponent";
 
 async function getPokemonData() {
   let url = "https://pokeapi.co/api/v2/pokemon-species";
@@ -14,18 +14,9 @@ export default async function Home() {
   console.log(data);
 
   return (
-    <main className="flex min-h-screen flex-col items-start justify-start p-24">
-      <div className="mb-2">
-        <select className="w-40 rounded-md p-1 capitalize">
-          {data && data.results.map((item) => 
-            <option>{item.name}</option>
-          )}
-        </select>
-      </div>
-      <form>
-        <input className="rounded-md" type="search" />
-        <button>Search</button>
-      </form>
-    </main>
+    <div>
+      <PokemonClientComponent data={data.results} />
+    </div>
+    
   );
 }
