@@ -9,9 +9,10 @@ export default function PokemonClientComponent(props) {
   const data =  props.data;
   const [showDataWithImages, setShowDataWithImages] = useState(data);
 
+  // handle dropdown options change
   const handleChange = (e) => {
     let val = e.target.value;
-    if(val === 'All') {
+    if(val === 'All') { // to show default all entries
       setShowDataWithImages(data);
     } else {
       let filteredData = data.filter((item) => item.name === val);

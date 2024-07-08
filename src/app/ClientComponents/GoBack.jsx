@@ -1,10 +1,10 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react';
 
 export default function GoBack() {
     const router = useRouter();
 
+    // function to handle "Back" link
     const handleClick = () => {
         router.back();
     }

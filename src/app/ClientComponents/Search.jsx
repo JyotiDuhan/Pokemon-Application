@@ -5,13 +5,12 @@ export default function Search() {
     const router = useRouter();
 
     const handleSearch = (e) => {
-        e.preventDefault();
-        var formData = new FormData(e.target);
-        const form_values = Object.fromEntries(formData);
-        console.log('event', form_values)
-        let name = form_values['search-pokemon'];
+        e.preventDefault(); // to avoid dafault refresh on form submit
+        var formData = new FormData(e.target); // access the form object
+        const form_values = Object.fromEntries(formData); // get form values
+        let name = form_values['search-pokemon']; // get desired field value
         if(name) {
-          router.push('/search/'+name);
+          router.push('/search/'+name); // route to search route to show the results
         }
     }
 

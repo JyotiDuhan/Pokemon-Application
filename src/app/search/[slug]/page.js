@@ -1,20 +1,11 @@
 import GoBack from "@/app/ClientComponents/GoBack";
-
-async function getPokemonData(pokemonName) {
-  let url = "https://pokeapi.co/api/v2/pokemon/" + pokemonName;
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return response.json();
-}
+import { getPokemonSearchData } from "../../../services/getPokemonData";
 
 export default async function Search({ params, searchParams }) {
-  console.log("searchParams", params.slug, searchParams);
-  const pokemonName = params?.slug || "bulbasaur";
-  const data = await getPokemonData(pokemonName);
-  console.log(data);
+  const pokemonName = params?.slug || "bulbasaur"; // get searched query param from url or use default
+  const data = await getPokemonSearchData(pokemonName);
 
+  // separate functions to get individual attribute values
   const getTypes = () => {
     let typesArr = [];
     const types = data.types.forEach((el) => {
