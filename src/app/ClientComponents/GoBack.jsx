@@ -10,6 +10,6 @@ export default function GoBack() {
     }
 
     return (
-        <div className="text-teal-300" onClick={handleClick}>{'< Back'}</div>
+        <div className="text-teal-300 mb-10" onClick={handleClick}>{'< Back'}</div>
     )
 }

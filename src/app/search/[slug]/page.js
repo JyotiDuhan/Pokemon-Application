@@ -51,7 +51,7 @@ export default async function Search({ params, searchParams }) {
     <main className="flex min-h-screen flex-col items-start justify-start p-24 bg-slate-100">
       <GoBack />
       <div>
-        <div className="w-120 flex justify-center bg-teal-300 p-10">
+        <div className="w-120 flex justify-center bg-teal-300 p-10 rounded-t-lg">
           <img
             className="h-40 w-40 rounded-t-lg h-60 w-60"
             src={`https://img.pokemondb.net/artwork/${pokemonName}.jpg`}
